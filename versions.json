@@ -1,6 +1,6 @@
 {
   "latest_version": "2.1.0",
   "released_at": "2026-08-03T00:00:00Z",
-  "download_url_apk": "releases/latest/download/txio-latest.apk",
-  "download_url_ipa": "releases/latest/download/txio-latest.ipa"
+  "download_url_apk": "https://github.com/Project1dev24/txio-app/releases/latest/download/Txio-v2.1.0.apk",
+  "download_url_ipa": "https://github.com/Project1dev24/txio-app/releases/latest/download/Txio-v2.1.0.ipa"
 }
