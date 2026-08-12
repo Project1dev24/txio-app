@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Trips — The ultimate app for group travel.</title>
+    <title>Splito — The ultimate app for group travel.</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="splito_favicon.png">
+    <link rel="shortcut icon" href="splito_favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +74,8 @@
 
         .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-heading); font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; }
         .brand-icon { width: 36px; height: 36px; background: var(--emerald-main); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.2rem; box-shadow: var(--shadow-emerald); }
+        .brand-icon-wrapper { width: 36px; height: 36px; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-emerald); flex-shrink: 0; }
+        .brand-icon-img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 10px; }
 
         nav { display: flex; gap: 32px; align-items: center; }
         .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; }
@@ -101,7 +107,7 @@
         .mockup-tab:hover { background: white; border-color: var(--emerald-main); box-shadow: 0 4px 14px rgba(5, 150, 105, 0.08); }
         .mockup-tab.active { background: white; border-color: var(--emerald-main); box-shadow: 0 4px 14px rgba(5, 150, 105, 0.12); border-width: 2px; }
 
-        .phone-mockup { background: #0F172A; border-radius: 44px; padding: 10px; box-shadow: 0 25px 65px rgba(15, 23, 42, 0.28); width: 340px; margin: 0 auto; border: 4px solid #334155; position: relative; overflow: hidden; }
+        .phone-mockup { background: #0F172A; border-radius: 44px; padding: 10px; box-shadow: 0 25px 65px rgba(15, 23, 42, 0.28); width: 340px; max-width: 100%; margin: 0 auto; border: 4px solid #334155; position: relative; overflow: hidden; }
         .phone-notch { width: 110px; height: 18px; background: #0F172A; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 30; }
         
         .phone-screen { background: #F8FAFC; border-radius: 34px; height: 620px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; font-family: var(--font-body); color: #0F172A; }
@@ -232,9 +238,81 @@
         footer { border-top: 1px solid var(--border-light); padding: 3rem 8%; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 1024px) {
-            .preview-container { grid-template-columns: 1fr; text-align: center; }
-            .preview-container > div:first-child { margin-bottom: 2rem; }
-            .features-grid { grid-template-columns: 1fr; }
+            header { padding: 1rem 5%; }
+            .preview-container { grid-template-columns: 1fr; text-align: center; padding: 2.5rem 2rem; gap: 2.5rem; }
+            .preview-container > div:first-child { margin-bottom: 0; }
+            .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .download-box { margin: 4rem 4%; padding: 3.5rem 5%; }
+        }
+
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 70px; }
+            header { padding: 0.85rem 4%; }
+            .brand-logo { font-size: 1.15rem; gap: 8px; }
+            .brand-icon, .brand-icon-wrapper { width: 32px; height: 32px; font-size: 1.05rem; border-radius: 8px; }
+            nav { gap: 12px; }
+            .nav-link { font-size: 0.82rem; }
+            .btn-cta-top { padding: 0.5rem 1rem; font-size: 0.82rem; border-radius: 8px; }
+
+            .hero-glow { width: 100%; height: 450px; top: -50px; }
+            .hero { padding: 3rem 4% 2rem; }
+            .hero-badge { font-size: 0.78rem; padding: 5px 12px; margin-bottom: 1.25rem; }
+            .hero h1 { font-size: 2.25rem; letter-spacing: -1.2px; line-height: 1.15; margin-bottom: 1rem; }
+            .hero p { font-size: 0.98rem; margin-bottom: 1.75rem; }
+            .hero-actions { flex-direction: column; gap: 10px; width: 100%; max-width: 320px; margin: 0 auto; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 0.85rem 1.4rem; font-size: 0.95rem; }
+
+            #preview { padding: 0 4% !important; }
+            .preview-container { padding: 1.75rem 1.25rem; border-radius: 20px; margin: 2rem auto 3rem; gap: 2rem; }
+            .preview-container h3 { font-size: 1.6rem !important; }
+            .preview-container p { font-size: 0.95rem !important; margin-bottom: 1.25rem !important; }
+            .mockup-tabs { gap: 8px; margin-top: 1.25rem; }
+            .mockup-tab { padding: 12px; font-size: 0.95rem; border-radius: 12px; }
+            .mockup-tab p { font-size: 0.78rem; margin-top: 2px; }
+            
+            .phone-mockup { width: 100%; max-width: 340px; margin: 0 auto; border-width: 3px; border-radius: 36px; padding: 8px; }
+            .phone-screen { height: 560px; border-radius: 28px; }
+            .phone-notch { width: 90px; height: 16px; }
+
+            .section-wrapper { padding: 3rem 4%; }
+            .section-head { margin-bottom: 2rem; }
+            .section-head h2 { font-size: 1.75rem; letter-spacing: -0.75px; margin-bottom: 0.5rem; }
+            .section-head p { font-size: 0.95rem; }
+
+            .map-box { margin: 0 !important; height: 480px !important; border-radius: 18px !important; }
+            .map-top-bar { top: 12px !important; left: 12px !important; right: 12px !important; }
+            .map-title { font-size: 1.1rem !important; }
+            .fit-bounds-btn { top: 58px !important; right: 12px !important; width: 34px !important; height: 34px !important; }
+            .map-bottom-panel { bottom: 12px !important; left: 12px !important; right: 12px !important; padding: 14px !important; border-radius: 16px !important; }
+
+            .features-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .feature-card { padding: 1.5rem; border-radius: 18px; }
+            .f-icon-box { width: 44px; height: 44px; margin-bottom: 1rem; border-radius: 12px; }
+            .f-icon-box svg { width: 22px; height: 22px; }
+            .feature-card h3 { font-size: 1.2rem; }
+            .feature-card p { font-size: 0.9rem; }
+
+            .download-box { padding: 2.5rem 1.25rem; border-radius: 24px; margin: 3rem 4%; }
+            .download-box h2 { font-size: 1.85rem; letter-spacing: -0.5px; }
+            .download-box p { font-size: 0.95rem; margin-bottom: 1.75rem; }
+            .dl-btns { flex-direction: column; width: 100%; gap: 10px; }
+            .btn-dl-white { width: 100%; justify-content: center; padding: 0.85rem 1.25rem; font-size: 0.9rem; }
+
+            footer { padding: 2rem 4%; font-size: 0.825rem; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 0.75rem 3.5%; }
+            .nav-link { display: none; }
+            .brand-logo { font-size: 1.05rem; }
+            .hero h1 { font-size: 1.8rem; letter-spacing: -0.5px; }
+            .hero p { font-size: 0.9rem; }
+            .preview-container { padding: 1.25rem 0.85rem; }
+            .preview-container h3 { font-size: 1.35rem !important; }
+            .phone-screen { height: 520px; }
+            .map-box { height: 420px !important; }
+            .download-box h2 { font-size: 1.55rem; }
+            .btn-text-apk, .btn-text-ipa { font-size: 0.82rem; }
         }
     </style>
 </head>
@@ -244,15 +322,10 @@
 
   <header>
     <a href="#" class="brand-logo">
-      <div class="brand-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path
-            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
-          </path>
-        </svg>
+      <div class="brand-icon-wrapper">
+        <img src="spitlo-iocn.png" alt="Splito" class="brand-icon-img">
       </div>
-      Split Trips
+      Splito
     </a>
     <nav id="mainNav">
       <a href="#preview" class="nav-link">Interactive Preview</a>
@@ -271,11 +344,11 @@
     <h1>Travel together.<br>
       <span class="dynamic-wrapper"><span id="dynamicText" class="dynamic-word">Split effortlessly.</span></span>
     </h1>
-    <p>Split Trips manages group travel budgets, splits complicated bills instantly, handles multi-currency conversions,
+    <p>Splito manages group travel budgets, splits complicated bills instantly, handles multi-currency conversions,
       and tracks settlements so you never do math on vacation again.</p>
 
     <div class="hero-actions">
-      <a href="#download" class="btn-primary">Get Split Trips</a>
+      <a href="#download" class="btn-primary">Get Splito</a>
       <a href="#preview" class="btn-secondary">Explore Preview ↓</a>
     </div>
   </section>
@@ -290,7 +363,7 @@
           style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--text-heading); letter-spacing: -0.5px; margin-bottom: 1rem;">
           Experience the UI</h3>
         <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">Switch between views to see how
-          Split Trips handles dashboards, detailed trip lists, spending insights, and complex settlement logic.</p>
+          Splito handles dashboards, detailed trip lists, spending insights, and complex settlement logic.</p>
 
         <div class="mockup-tabs">
           <button class="mockup-tab active" onclick="switchScreen('dashboard', this)">
@@ -719,27 +792,27 @@
       <p>Visualize all your spending and trips across India with interactive media markers.</p>
     </div>
     
-    <div style="margin: 0 6%; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-light); height: 700px; position: relative; background: #e5e5e5; font-family: var(--font-body);">
+    <div class="map-box" style="margin: 0 6%; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-light); height: 700px; position: relative; background: #e5e5e5; font-family: var(--font-body);">
       
       <!-- Leaflet Map Container -->
       <div id="leaflet-map" style="width: 100%; height: 100%; z-index: 1;"></div>
 
       <!-- Overlays to match the screenshot UI -->
       <!-- Top Header -->
-      <div style="position: absolute; top: 20px; left: 20px; right: 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; pointer-events: none;">
-         <h3 style="margin: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: #0F172A; text-shadow: 0 2px 10px rgba(255,255,255,0.8);">Trips Map Explorer</h3>
+      <div class="map-top-bar" style="position: absolute; top: 20px; left: 20px; right: 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; pointer-events: none;">
+         <h3 class="map-title" style="margin: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: #0F172A; text-shadow: 0 2px 10px rgba(255,255,255,0.8);">Trips Map Explorer</h3>
          <div style="pointer-events: auto; background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer;">
              <svg width="20" height="20" fill="none" stroke="#0F172A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
          </div>
       </div>
 
       <!-- Center Right Icon (Fit to Bounds) -->
-      <div id="fit-bounds-btn" style="position: absolute; top: 80px; right: 20px; z-index: 1000; pointer-events: auto; background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;">
+      <div id="fit-bounds-btn" class="fit-bounds-btn" style="position: absolute; top: 80px; right: 20px; z-index: 1000; pointer-events: auto; background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;">
           <svg width="20" height="20" fill="none" stroke="#0F172A" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
       </div>
 
       <!-- Bottom Panel -->
-      <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); pointer-events: auto;">
+      <div class="map-bottom-panel" style="position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); pointer-events: auto;">
           <div style="width: 40px; height: 4px; background: #CBD5E1; border-radius: 2px; margin: 0 auto 15px auto;"></div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
               <h4 style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #0F172A;">Active & Recent Trips</h4>
@@ -960,7 +1033,7 @@
 
   <div class="download-box" id="download">
     <h2>Ready to travel smarter?</h2>
-    <p>Download Split Trips today and start managing your group expenses flawlessly.</p>
+    <p>Download Splito today and start managing your group expenses flawlessly.</p>
     <div class="dl-btns">
       <a href="https://drive.google.com/uc?export=download&id=1ojzTuDUBSjXq54Lin4xeSnnMIqmVW9JU" id="apkDownloadBtn" class="btn-dl-white">
         <svg style="width:20px; height:20px; fill:currentColor;" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-1.0001 0-.551.4482-.9992.9993-.9992.5516 0 .9997.4482.9997.9992 0 .5515-.4481 1.0001-.9997 1.0001m-11.046 0c-.5511 0-.9993-.4486-.9993-1.0001 0-.551.4482-.9992.9993-.9992.5516 0 .9997.4482.9997.9992 0 .5515-.4481 1.0001-.9997 1.0001m11.4045-6.0203l1.9973-3.4592a.416.416 0 00-.1522-.5676.416.416 0 00-.5676.1522l-2.0223 3.5028c-1.5704-.7162-3.3421-1.116-5.1867-1.116-1.8446 0-3.6163.3998-5.1867 1.116L4.838 5.4465a.4158.4158 0 00-.5676-.1522.416.416 0 00-.1522.5676l1.9973 3.4592C2.6885 11.1867.3438 14.7089.0494 18.9189h23.9012c-.2944-4.21-2.6391-7.7322-6.0691-9.5978"></path></svg>
@@ -974,7 +1047,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Split Trips. Built for friends who travel.</p>
+    <p>&copy; 2026 Splito. Built for friends who travel.</p>
   </footer>
 
   <script>
