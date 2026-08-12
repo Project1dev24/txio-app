@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="zolye-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#888888"/>
+    </linearGradient>
+    <linearGradient id="zolye-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Squircle Background -->
+  <rect width="512" height="512" rx="128" ry="128" fill="url(#zolye-bg)" stroke="rgba(255,255,255,0.15)" stroke-width="12"/>
+  
+  <!-- Stylized Monogram "Z" -->
+  <path d="M 140 150 L 372 150 L 160 362 L 372 362" 
+        fill="none" 
+        stroke="url(#zolye-grad)" 
+        stroke-width="54" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
